@@ -32,7 +32,7 @@
 /* This is a set of predefined values for this laboratory*/
 
 #define AVERAGE_COUNT 32
-#define WORKING_SCAN_COUNT 16
+#define WORKING_SCAN_COUNT 64
 
 /*---------------------------------------------------------------------------*/
 /* This is a set of global variables for this laboratory*/
@@ -99,7 +99,7 @@ PROCESS_THREAD(channel_scanner, ev, data)
                 int rssiAverage = cc2420_average_rssi() + 100;
                 int rssiWorking = cc2420_working_rssi() + 100;
                 if (rssiAverage||rssiWorking){
-                    printf("CH-%d RSSI: %d,[%d]\n",i,rssiAverage,rssiWorking);
+                    printf("CH-%d average RSSI: %d, Working RSSI: %d.\n",i,rssiAverage,rssiWorking);
                 }
             }
 	}
